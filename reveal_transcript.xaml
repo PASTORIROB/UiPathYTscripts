@@ -1,0 +1,268 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="reveal_transcript" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_videolist" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="out_dt_finished" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1271,3023</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>reveal_transcript_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="reveal_transcript" sap:VirtualizedContainerService.HintSize="820,2958" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:AddDataColumn x:TypeArguments="x:String" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" Unique="{x:Null}" AllowDBNull="True" ColumnName="Transcript" DataTable="[in_videolist]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="758,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" MaxLength="-1" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_videolist]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="758,2499" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="724,2313" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="682,2225" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+              <TryCatch.Try>
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: (110) pardon my take - YouTube" sap:VirtualizedContainerService.HintSize="644,1997" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="d6319cd0-eaf6-412b-8e3a-bf4060fdb1e7" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="610,1780" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '...more'" sap:VirtualizedContainerService.HintSize="548,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d6319cd0-eaf6-412b-8e3a-bf4060fdb1e7" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable Accuracy="0.99" BrowserURL="https://www.youtube.com/watch?v=jiJsiNbKPEM&amp;t=7220s" CvTextArea="112, 880, 47, 11" CvTextArgument="-..more" CvType="Text" DesignTimeRectangle="114, 876, 44, 20" DesignTimeScaleFactor="1" FriendlyName="'...more'" FullSelectorArgument="&lt;webctrl id='expand' tag='TP-YT-PAPER-BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='expand' tag='TP-YT-PAPER-BUTTON' type='' class='button style-scope ytd-text-inline-expander' aaname='...more' check:innerText='...more' /&gt;" Guid="ca69913c-c124-4310-a9e9-f52458ad57ae" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAYCAYAAAC8/X7cAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANSSURBVFhH7VXNK6xhFJ9GZnwM4zNiIlLzF1iMWY9JbKxYKlIMabKlSMlYDIvZq4kFavJdSFkgYYEFskA+akb5HIyP8rv9zu19Y27q3tFt7q1ZnN7nnPOc85zf+Xo1ZrMZ/zPFAESbYgCiTTEA0aaIAWRnZ0Oj0SA1NVW+JK1Wi9zcXCQmJqoy3lNs8vPzP+l4pow62lGWkJAg36SkJJSUlCAvL0/8KjYZGRkoKipSfUYEgEGNjIzg6ekJ6+vrCAQCeHx8xMnJCfr6+nBwcCC6q6srDA0NIT4+Xh52OBzY29tDMBgU4pkyBjYwMID7+3uRXV5eYn9/H5mZmejo6BC/9Hd3d4fFxUWUlZWpICIG4PV6xanf78f4+Dg2NzcFBGVra2uYmJjAzc0Nrq+v0djYCLvdjuPjY4RCIczPzwvxTJnNZoPL5ZIAKTs8PMT09DTq6urEBxPBN1ZWVvD6+orZ2VkYDAaJ5VsA6Gx4eFgy2NTUJA8dHR2hvLxcZEtLSwKot7cXg4ODeHl5wdzcnNoOPFNGXU9PjyRgdXVV1ft8PgHE6pCvqKgQ/+fn56iurkZhYeH3AfBL562trZLB3d1d4dPT01UAXV1dmJqakmA8Hg9ycnKEeH5+fsbY2Bi6u7vlLm3S0tKQkpKCra0tPDw84O3tTWzf39/lzYuLC9TU1KCgoODvAOAA/i4AytguvKMAoC1bZHt7G7e3t+jv75dZ4RsNDQ1CjINDrgIgGm4FbhUOSDjPbcFtwMH60wqwPdxu95ctRB3vfASQlZWFmZkZ0Y+Ojqo2tbW1qKqqku3EuAUAg2VJODwsm9Vq/cRbLBa0t7fj9PRUtgAdfQWAG4P9SfAKAG4mys7OziTjH4eYMup45yMAJszpdMoSYBstLCxgcnJSzkxSaWkpiouLfwIwmUxSFq5DBl1ZWYn6+nqV5/CwR1nOjY0NCZjDy/5VhritrU2GmACYJb1ej+XlZVmXyhA2Nzf/skYpo453KKMNATAunU6Hzs5O8ckBp35nZwctLS3SgmoFFBB0xMxxusN5loy80WiU+2wj8vySZ8bIx8XFSUUpYyCU8Sel3KE/ykg8h//IlOAVCv+RJScnqzakiIb4X6IYgGhTDEC0KQYgumTGD6qH9YvJYnb4AAAAAElFTkSuQmCC" InformativeScreenshot="b9ba586f082a103c6e4400b67564f663.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(110) TOM FORNELLI SAYS ALABAMA DYNASTY MIGHT BE OVER + KENTUCKY SPORTS RADIO - YouTube' /&gt;" SearchSteps="Selector, FuzzySelector, Image, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DelayBefore="4" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="548,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d6319cd0-eaf6-412b-8e3a-bf4060fdb1e7" Version="V3">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.youtube.com/watch?v=jiJsiNbKPEM&amp;t=7220s" CvElementArea="41, 779, 134, 40" CvTextArea="59, 790, 100, 17" CvTextArgument="Show transcript" CvType="Button" DesignTimeRectangle="45, 781, 128, 34" DesignTimeScaleFactor="1" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl class='yt-spec-touch-feedback-shape__fill' parentid='primary-button' tag='DIV' parentclass='yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl class='yt-spec-touch-feedback-shape__fill' parentid='primary-button' tag='DIV' parentclass='yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response' type='' aaname='' /&gt;" Guid="c4e79e0f-9f8b-4835-9f59-68ce46498bb5" InformativeScreenshot="f40cca934a4e3dd10f8402ebec42fd64.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* YouTube' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,1271" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="transcript" />
+                            <Variable x:TypeArguments="sd:DataTable" Name="dt_Transcript" />
+                            <Variable x:TypeArguments="x:String" Name="str_script" />
+                            <Variable x:TypeArguments="x:String" Name="strTrans" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,347" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,268" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Transcript]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='tra' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column css-selector='.segment-text.style-scope.ytd-transcript-segment-renderer' name='Column0' attr='fulltext' /&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" InteractionMode="Simulate" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="d6319cd0-eaf6-412b-8e3a-bf4060fdb1e7" Version="V3">
+                                  <uix:NExtractData.Target>
+                                    <uix:TargetAnchorable DesignTimeRectangle="1330, 287, 383, 78002" DesignTimeScaleFactor="1" FriendlyName="'intro 0:00'" FullSelectorArgument="&lt;webctrl id='segments-container' tag='DIV' /&gt;" Guid="06e791ad-35cd-4a39-808a-0278462b919e" InformativeScreenshot="f3a277b1abbf2defbeb7ba087af7343b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(110) Chris Berman In Studio, NFL Season Recap With Jerry O&amp;apos;Connell + Recap Of Hank&amp;apos;s Standup Performance - YouTube' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                                  </uix:NExtractData.Target>
+                                </uix:NExtractData>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <uix:NGetText DisplayName="Get Text 'NaN / NaN Chapters'" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="d6319cd0-eaf6-412b-8e3a-bf4060fdb1e7" ScrapingOptions="None" TextString="[strTrans]" Version="V3">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.youtube.com/watch?v=78sOFBUbleg&amp;t=1s" DesignTimeRectangle="1338, -1981, 426, 5150" DesignTimeScaleFactor="1" FriendlyName="'NaN / NaN Chapters'" FullSelectorArgument="&lt;webctrl id='secondary' parentid='columns' tag='DIV' visibleinnertext='Transcript*' /&gt;" FuzzySelectorArgument="&lt;webctrl id='secondary' parentid='columns' tag='DIV' visibleinnertext='Transcript*' type='' class='style-scope ytd-watch-flexy' aaname='        ' /&gt;" Guid="39ec82b6-e3a5-4c57-a937-e13d1e93084b" ImageBase64="" InformativeScreenshot="7b4d95bb8b26c781f2e811c150345383.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='* - YouTube' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                          </uix:NGetText>
+                          <ui:OutputDataTable DataTable="[dt_Transcript]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="486,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[str_script]" />
+                          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="486,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                            <ui:MultipleAssign.AssignOperations>
+                              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_script]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String" xml:space="preserve">[strTrans.Replace("\n\n\n\n","  ")]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                  <ui:AssignOperation.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_script]</OutArgument>
+                                  </ui:AssignOperation.To>
+                                  <ui:AssignOperation.Value>
+                                    <InArgument x:TypeArguments="x:String">[str_script.Replace("\n"," ")]</InArgument>
+                                  </ui:AssignOperation.Value>
+                                </ui:AssignOperation>
+                              </scg:List>
+                            </ui:MultipleAssign.AssignOperations>
+                          </ui:MultipleAssign>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[str_script]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[CurrentRow("Transcript")]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[str_script]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </Sequence>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="1273, 0, 1294, 1407" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAACp0lEQVRYR8XXz0tUURQH8K8/8hZiYfmDmqgLuQhrE+1diLRxldAfEIQQBBJIIkHQKqpFG0FIEVsFQlGJRokEgqFgmo7m2GCvH8yEjDkkIaLl6XsfDoGc12g4rwufWZxz7j2H92OYgYj8V2owTGowTGowTFhdXfWt0Dda2JTe9J3kjzwq+It88mvXKXPGEmXOTdEPyvSFtRYROk6XrD3Tae3lfmvvxqztnrf26WdrBzesHRZr39AkzdI7hYtP0ziNrlg7xP0v6XHU2q4+a+/w7CtN1tactjbvMPu53v46CBQ/Abo3gF/+XcmxceDVSeCY37wQyBtgc60wl2LAUAlQhHPAWQZ+bi0Iw3mgFjeBJi0ZhnvAdTwE2rVkGHqBB3gNPNOSgcrLRVpbRUpL9fwOsPcA4sCwlgzkBlhfF4nHRRoa9Jpt+gSMg09jVEsGKisTSaX4Jba5enpEqqr02iySwJwbYE5LBto6gFvptEhzs0hRkb4nQAL4whEQ05KBtAEya2JCpL5e36f4CiTxYTeuQGa5K9HYqO9TLLgBduUWuNXRIRKJ6HsC8BYk3AAzWjLQ1gHGxkTq6vTaLDjAPN4DI1oykBtgbU1keVmkpUXEGL1uG/gWTGEM6NeSgSorRbq6RKqr9fwOsPcQeoBOLRkoP1+P/4NBsP1t4JqWDEM7cAsNQI2WDEMj2L4Y2DMJvNAKcolfQjNHAf4m4ToFRKb5QGiFucDXb7rWb8tljHEfqDCm8KoxFx4Z0zZiTF/CmJGkMbOLxnzkq5akFKVpOYslcrVJt9edwbNGeebzXmPu3zDm4gljSlxPv7fneb44vaUpilGCkp5XsOh5+8TzDtAhqqQjWVSQq93PvXvdGe4sd2aUXI85yvTlNdH/MIRFDYZJDYZJDYZH8BtrTS5QuubtDwAAAABJRU5ErkJggg==" InformativeScreenshot="de571c2ed16dce79eaee6222e4eed924.jpg" Selector="&lt;html app='chrome.exe' title='(*)*YouTube' url='https://www.youtube.com/watch*' /&gt;" Title="(110) pardon my take - YouTube" Url="[CurrentRow.Item(&quot;Vid_URL&quot;).ToString]" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="648,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[CurrentRow("Transcript")]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Object">["Failed"]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <Assign sap:VirtualizedContainerService.HintSize="758,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[out_dt_finished]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[in_videolist]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

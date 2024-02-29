@@ -1,0 +1,33 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_CSVlinks",
+      "DisplayName": "in_CSVlinks",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "C:\\Users\\Rob\\Desktop\\pmt\\PMT_links.csv",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_CSVscripts",
+      "DisplayName": "in_CSVscripts",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "C:\\Users\\Rob\\Desktop\\pmt\\PMT_transcripts.csv",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}
